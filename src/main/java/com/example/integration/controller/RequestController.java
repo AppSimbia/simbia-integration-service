@@ -6,10 +6,8 @@ import com.example.integration.service.CnpjService;
 import com.example.integration.service.LeisService;
 import com.opencsv.exceptions.CsvValidationException;
 import org.hibernate.validator.constraints.br.CNPJ;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
