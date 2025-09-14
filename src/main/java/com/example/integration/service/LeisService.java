@@ -27,5 +27,4 @@ public class LeisService {
             return csvService.readCsv(inputStream);
         }
     }
-
 }
