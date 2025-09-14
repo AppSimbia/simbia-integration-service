@@ -8,7 +8,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.nio.file.Path;
+import java.io.InputStream;
 import java.util.List;
 
 @Service
@@ -23,9 +23,8 @@ public class LeisService {
     @Cacheable("leis")
     public List<LeiDto> readCsv() throws CsvValidationException, IOException {
         Resource resource  = new ClassPathResource("leis-data.csv");
-        Path filePath = resource.getFile().toPath();
-
-        return csvService.readCsv(filePath);
+        try (InputStream inputStream = resource.getInputStream()) {
+            return csvService.readCsv(inputStream);
+        }
     }
-
 }
