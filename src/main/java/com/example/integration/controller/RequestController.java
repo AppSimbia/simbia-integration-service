@@ -29,7 +29,7 @@ public class RequestController {
         return leisService.readCsv();
     }
 
-    @GetMapping("/{cnpj}")
+    @GetMapping("/cnpj/{cnpj}")
     public WsData getEnterpriseByCnpj(@PathVariable @CNPJ String cnpj){
         return cnpjService.getEnterpriseByCnpj(cnpj);
     }
