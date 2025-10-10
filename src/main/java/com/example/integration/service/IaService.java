@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 @RequiredArgsConstructor
 public class IaService {
 
-    @Value("${AUTHENTICATION_KEY}")
+    @Value("${authentication.key}")
     private static String AUTHORIZATION_KEY;
 
     private final RobustIaClient robustIaClient;

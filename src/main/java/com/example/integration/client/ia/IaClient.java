@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 
-@FeignClient(name = "ia-client", url = "/api")
+@FeignClient(name = "ia-client", url = "${ia.client.url}")
 public interface IaClient {
 
     @PostMapping("/match/suggest")
