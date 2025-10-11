@@ -2,7 +2,6 @@ package com.example.integration.client.cnpj;
 
 import com.example.integration.client.RobustClient;
 import com.example.integration.client.cnpj.response.WsData;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -17,7 +16,6 @@ public class RobustCnpjClient extends RobustClient{
         this.cnpjClient = cnpjClient;
     }
 
-    @Cacheable("enterprise")
     public WsData getEnterpriseByCnpj(String cnpj) {
         return super.robustCall(() -> cnpjClient.getDataByCnpj(cnpj));
     }

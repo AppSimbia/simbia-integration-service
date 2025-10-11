@@ -40,7 +40,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handleGenericException(Exception ex) {
-        final String message = "Ocorreu um erro interno no servidor.\n" + ex.getMessage();
+        final String message = "Ocorreu um erro interno no servidor.\n" + ex.getMessage() +  " , "  + ex.getClass().getName();
         return new ResponseEntity<>(message , HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
