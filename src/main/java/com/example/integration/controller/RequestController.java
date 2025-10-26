@@ -1,11 +1,13 @@
 package com.example.integration.controller;
 
+import com.example.integration.client.cep.response.CepData;
 import com.example.integration.client.cnpj.response.WsData;
 import com.example.integration.client.ia.request.IaPostData;
 import com.example.integration.client.ia.request.IaQuestionData;
 import com.example.integration.client.ia.response.IaPostResponse;
 import com.example.integration.client.ia.response.IaQuestionResponse;
 import com.example.integration.dto.LeiDto;
+import com.example.integration.service.CepService;
 import com.example.integration.service.CnpjService;
 import com.example.integration.service.IaService;
 import com.example.integration.service.LeisService;
@@ -24,6 +26,7 @@ public class RequestController {
     private final CnpjService cnpjService;
     private final LeisService leisService;
     private final IaService iaService;
+    private final CepService cepService;
 
     @GetMapping("/leis")
     public List<LeiDto> readCsv() throws CsvValidationException, IOException {
@@ -44,4 +47,10 @@ public class RequestController {
     public IaPostResponse suggestPost(@RequestBody IaPostData data) {
         return iaService.suggestPost(data);
     }
+
+    @GetMapping("/cep/{cep}")
+    public CepData getCepData(@PathVariable String cep) {
+        return cepService.getCepData(cep);
+    }
+
 }
