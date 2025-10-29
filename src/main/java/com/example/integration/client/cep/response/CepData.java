@@ -1,12 +1,14 @@
 package com.example.integration.client.cep.response;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class CepData {
     private String logradouro;
     private String bairro;
