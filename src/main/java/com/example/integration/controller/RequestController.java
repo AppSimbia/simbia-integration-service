@@ -14,11 +14,13 @@ import com.example.integration.service.LeisService;
 import com.opencsv.exceptions.CsvValidationException;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.validator.constraints.br.CNPJ;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
 
+@Validated
 @RestController
 @RequiredArgsConstructor
 public class RequestController {
