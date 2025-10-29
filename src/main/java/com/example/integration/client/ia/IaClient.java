@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RequestHeader;
 @FeignClient(name = "ia-client", url = "${ia.client.url}")
 public interface IaClient {
 
-    @PostMapping("/match/suggest")
+    @PostMapping("/api/match/suggest")
     IaPostResponse suggestPost(
             @RequestHeader("Cookie") String cookie,
             @RequestHeader("Authorization") String authorization,
             @RequestBody IaPostData data);
 
-    @PostMapping("/chat/question")
+    @PostMapping("/api/chat/question")
     IaQuestionResponse sendQuestion(
             @RequestHeader("Cookie") String cookie,
             @RequestHeader("Authorization") String authorization,

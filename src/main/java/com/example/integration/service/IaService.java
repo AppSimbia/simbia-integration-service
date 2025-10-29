@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 public class IaService {
 
     @Value("${authentication.key}")
-    private static String AUTHORIZATION_KEY;
+    private String AUTHORIZATION_KEY;
 
     private final RobustIaClient robustIaClient;
     private final RedisTemplate<String, String> redisTemplate;
