@@ -14,5 +14,6 @@ public class IaQuestionData {
 
     private String industryId;
     private String message;
+    private String sessionId;
 
 }
