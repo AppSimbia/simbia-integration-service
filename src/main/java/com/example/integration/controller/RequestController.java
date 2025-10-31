@@ -55,4 +55,9 @@ public class RequestController {
         return cepService.getCepData(cep);
     }
 
+    @GetMapping("/health/check")
+    public String healthCheck() {
+        return "I'm Still Standing!";
+    }
+
 }
